@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/swc3_db</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="@eu-cdbr-west-03.cleardb.net" uuid="f7a1c0c9-b9ee-4351-b061-a8d6fef0899b">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://eu-cdbr-west-03.cleardb.net:3306</jdbc-url>
+    </data-source>
   </component>
 </project>

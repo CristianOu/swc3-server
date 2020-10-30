@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: swc3.server2.Server2ApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.94 s - in swc3.server2.Server2ApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.126 s - in swc3.server2.Server2ApplicationTests
