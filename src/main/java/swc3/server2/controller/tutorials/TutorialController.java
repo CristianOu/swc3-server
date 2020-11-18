@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import swc3.server2.model.Tutorial;
 import swc3.server2.repository.TutorialRepository;
+import swc3.server2.services.TutorialService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,36 +18,23 @@ import java.util.Optional;
 public class TutorialController {
 
     @Autowired
+    TutorialService tutorialService;
+
+    @Autowired
     TutorialRepository tutorialRepository;
 
     @GetMapping("/tutorials")
     public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title){
-        try {
-            List<Tutorial> tutorials = new ArrayList<>();
-
-            if(title == null)
-                tutorials = tutorialRepository.findAll();
-             else
-                tutorials = tutorialRepository.findByTitleContaining(title);
-
-            if(tutorials.isEmpty())
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
-            return new ResponseEntity<>(tutorials, HttpStatus.OK);
-
-        }catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        return tutorialService.getAll(title);
     }
+
+
 
     @GetMapping("/tutorials/{id}")
     public ResponseEntity<Tutorial> getTutorialById(@PathVariable("id") long id){
-        Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
-        if (tutorialData.isPresent())
-            return new ResponseEntity<>(tutorialData.get(), HttpStatus.OK);
-        else
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return tutorialService.getById(id);
     }
+
 
     @GetMapping("/tutorials/published")
     public ResponseEntity<List<Tutorial>> findByPublished(){
