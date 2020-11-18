@@ -6,7 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "order_item_notes", schema = "swc3_db2")
+@Table(name = "order_item_notes", schema = "swc3_db")
 public class OrderItemNote {
     private int noteId;
     private String note;

@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "order_statuses", schema = "swc3_db2")
+@Table(name = "order_statuses", schema = "swc3_db")
 public class OrderStatus {
     private byte orderStatusId;
     private String name;

@@ -42,6 +42,7 @@ public class TutorialControllerWithHandler {
 
     @GetMapping("/tutorials/published")
     public ResponseEntity<List<Tutorial>> findByPublished(){
+
             List<Tutorial> tutorials = tutorialRepository.findByPublished(true);
 
             if(tutorials.isEmpty())

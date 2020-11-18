@@ -8,7 +8,7 @@ import java.sql.Date;
 import java.util.Collection;
 
 @Entity
-@Table(name = "customers", schema = "swc3_db2")
+@Table(name = "customers", schema = "swc3_db")
 public class Customer {
     private int customerId;
     private String firstName;

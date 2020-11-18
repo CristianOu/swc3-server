@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "shippers", schema = "swc3_db2")
+@Table(name = "shippers", schema = "swc3_db")
 public class Shipper {
     private short shipperId;
     private String name;
